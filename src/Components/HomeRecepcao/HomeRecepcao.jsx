@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './HomeRecepcao.css';
 
 function HomeRecepcao() {
     const [nome, setNome] = useState('');
@@ -24,7 +25,7 @@ function HomeRecepcao() {
     };
 
     return (
-        <div>
+        <div className="home-recepcao"> 
             <h1>Home Recepção</h1>
             <input type="text" placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)} />
             <input type="text" placeholder="Sobrenome" value={sobrenome} onChange={(e) => setSobrenome(e.target.value)} />
@@ -36,7 +37,9 @@ function HomeRecepcao() {
                 <option value={3}>Cliente</option>
             </select>
             <button onClick={handleSubmit}>Cadastrar Usuário</button>
+            
         </div>
+        
     );
 }
 
