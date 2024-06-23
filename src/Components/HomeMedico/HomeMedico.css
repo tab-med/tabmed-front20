@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    min-height: 100vh; /* Garante que o container ocupe a altura total da tela */
+    background-color: #333; /* Cor de fundo escura */
+    color: white; /* Cor do texto branca */
+    padding: 20px; /* Espaçamento interno */
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px; /* Aumenta o espaçamento abaixo do título */
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: row;  /* Botões lado a lado */
+    justify-content: space-around;
+    width: 80%;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px; /* Padding menor para botões menores */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;    /* Tamanho da fonte menor */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 45%;         /* Largura ajustada para caber os dois botões lado a lado */
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }

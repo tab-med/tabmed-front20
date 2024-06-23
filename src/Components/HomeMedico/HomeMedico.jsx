@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { useNavigate } from 'react-router-dom';
+import './HomeMedico.css'; 
 
 function HomeMedico() {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ function HomeMedico() {
         const usuarioJSON = await AsyncStorage.getItem('usuario');
         if (usuarioJSON) {
           const usuario = JSON.parse(usuarioJSON);
-          setNomeMedico(usuario.nome); 
+          setNomeMedico(usuario.nome);
         }
       } catch (error) {
         console.error('Erro ao buscar nome do médico:', error);
@@ -32,42 +33,20 @@ function HomeMedico() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Bem-vindo, {nomeMedico}!</Text>
-      <TouchableOpacity style={styles.button} onPress={handleCriarFormularioClick}>
-        <Text style={styles.buttonText}>Criar Formulário</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={handleHistoricoFormulariosClick}>
-        <Text style={styles.buttonText}>Histórico de Formulários</Text>
-      </TouchableOpacity>
+    <View style={{ flex: 1, backgroundColor: '#007bff' }}> 
+      <View className="container">
+        <Text className="title">Bem-vindo, {nomeMedico}!</Text>
+        <View className="button-container">
+          <TouchableOpacity className="button" onPress={handleCriarFormularioClick}>
+            <Text className="buttonText">Criar Formulário</Text>
+          </TouchableOpacity>
+          <TouchableOpacity className="button" onPress={handleHistoricoFormulariosClick}>
+            <Text className="buttonText">Histórico de Formulários</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  button: {
-    backgroundColor: '#007bff',
-    padding: 15,
-    borderRadius: 8,
-    marginBottom: 10, // Adicionei um espaçamento entre os botões
-    width: '100%', // Faz o botão ocupar toda a largura
-    alignItems: 'center', // Centraliza o texto horizontalmente
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-});
 
 export default HomeMedico;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import userService from '../../services/userService';
+import './Login.css';
 
 function Login() {
   const [cpf, setCpf] = useState('');
@@ -101,6 +102,18 @@ function Login() {
       <button onClick={handleLogin} disabled={isLoading}>
         Login
       </button>
+      return (
+    <div className="login-container">
+      <div className="login-box">
+        <h1 className="login-title">Login Page</h1>
+        {/* ... (seus inputs, mensagens de erro e botão) ... */}
+      </div>
+      <div className="image-container">
+        {/* ... (sua imagem) ... */}
+      </div>
+    </div>
+  );
+}
     </div>
   );
 }
