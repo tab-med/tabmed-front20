@@ -31,8 +31,15 @@ function HomeMedico() {
     navigate('/historico-formularios');
   };
 
+  const handleLogoffClick = () => {
+    AsyncStorage.removeItem('usuario'); 
+    navigate('/'); 
+  };
+
   return (
-    <div className="container"> 
+    <div className="container">
+      <button className="botao-logoff" onClick={handleLogoffClick}>Logoff</button>
+
       <p className="title">Bem-vindo, {nomeMedico}!</p> 
       <div className="button-container">
         <button className="button" onClick={handleCriarFormularioClick}>

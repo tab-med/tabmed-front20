@@ -48,3 +48,19 @@
     height: 100%;
   }
   
+  .botao-logoff {
+    position: absolute;
+    top: 20px; /* Ajuste a distância do topo conforme necessário */
+    left: 20px; /* Ajuste a distância da esquerda conforme necessário */
+    background-color: #dc3545; /* Cor de fundo vermelha para o botão de logoff */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .botao-logoff:hover {
+    background-color: #c82333; /* Cor de fundo mais escura ao passar o mouse */
+  }
+  
