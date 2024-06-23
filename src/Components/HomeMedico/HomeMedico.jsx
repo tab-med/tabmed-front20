@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { useNavigate } from 'react-router-dom';
 import './HomeMedico.css'; 
@@ -33,19 +32,17 @@ function HomeMedico() {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#007bff' }}> 
-      <View className="container">
-        <Text className="title">Bem-vindo, {nomeMedico}!</Text>
-        <View className="button-container">
-          <TouchableOpacity className="button" onPress={handleCriarFormularioClick}>
-            <Text className="buttonText">Criar Formulário</Text>
-          </TouchableOpacity>
-          <TouchableOpacity className="button" onPress={handleHistoricoFormulariosClick}>
-            <Text className="buttonText">Histórico de Formulários</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </View>
+    <div className="container"> 
+      <p className="title">Bem-vindo, {nomeMedico}!</p> 
+      <div className="button-container">
+        <button className="button" onClick={handleCriarFormularioClick}>
+          <span className="buttonText">Criar Formulário</span> 
+        </button>
+        <button className="button" onClick={handleHistoricoFormulariosClick}>
+          <span className="buttonText">Histórico de Formulários</span> 
+        </button>
+      </div>
+    </div>
   );
 }
 
